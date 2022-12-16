@@ -36,10 +36,17 @@
 }
 .content__introduce-btn-order {
   @include btn-all();
-  background-color: #2f2105;
-  color: $white;
+  min-width: 143px;
+  background-color: transparent;
+  border: 1px solid #2f2105;
   font-weight: 600;
+  color: black;
 }
+
+.content__introduce-btn-order:hover {
+  color: rgba(47, 33, 5, 0.8);
+}
+
 .icon-in-card-btn {
   width: 26px;
   background-color: #ff902a;
@@ -172,8 +179,8 @@
 
 .from-second-content-menu {
   display: grid;
-  grid-template-columns: 350px 350px 350px;
-  gap: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px 20px;
   top: -25%;
   height: 100%;
   right: 6%;
@@ -449,7 +456,7 @@
 .content {
   &__thirty-menu {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px 40px;
     margin-top: 40px;
   }
