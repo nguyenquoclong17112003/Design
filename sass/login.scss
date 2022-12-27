@@ -1,5 +1,6 @@
 @import "reset";
-@import "variab";
+@import "variables";
+@import "modal";
 
 body {
   background-color: $primary-color;
@@ -140,4 +141,34 @@ body::before {
   top: 82%;
   opacity: 0.4;
   width: 35px;
+}
+
+.login__create-account {
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: black;
+  transform: translateX(-50%);
+  left: 50%;
+  font-weight: 500;
+  position: relative;
+}
+
+.login__create-account::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0%;
+  top: 110%;
+  height: 1.6px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  background-color: #ded4c5;
+}
+
+.login__create-account:hover.login__create-account::after {
+  width: 100%;
 }

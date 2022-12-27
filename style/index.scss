@@ -403,9 +403,36 @@
   margin-top: 16px;
 }
 .content__four-about-btn {
-  @include btn-all(#2f2105, #f4ae26);
+  @include btn-all(transparent, #f4ae26);
   font-weight: 700;
   margin-top: 31px;
+  position: relative;
+  border: 1px solid #2f2105;
+}
+
+.content__four-about-btn::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 33px;
+  width: 100%;
+  height: 46px;
+  transition: all 0.6s;
+  left: 0;
+  bottom: 0;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.btn-coffee {
+  position: absolute;
+  z-index: 1;
+}
+
+.content__four-about-btn:hover.content__four-about-btn::after {
+  transform: scale(1);
+  transform-origin: center;
+  background-color: #2f2105;
 }
 
 .content__four-img-ps {
@@ -461,11 +488,17 @@
     margin-top: 40px;
   }
   &__thirty-menu-item {
-    box-shadow: 0 3px 10px rgb(0 0 0 / 30%);
     border-radius: 12px;
     padding: 20px;
     position: relative;
+    transition: all 0.5s;
   }
+  &__thirty-menu-item:hover {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 30%);
+    transform: rotate(1.5deg);
+    cursor: pointer;
+  }
+
   &__thirty-item-img {
     border-radius: 12px;
     height: 234px;
@@ -646,7 +679,6 @@
     display: flex;
     height: 55px;
     background-color: #fff;
-
     margin: 32px auto 0;
   }
   &__footer-frame-input {
@@ -658,9 +690,11 @@
     border: none;
     outline: none;
     padding: 0 16px;
+    transition: all 0.5s;
     border-bottom-left-radius: 28px;
     font-weight: 600;
   }
+
   &__footer-frame-btn {
     @include btn-all(#2f2105, $white);
     font-weight: 600;
